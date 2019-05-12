@@ -1,22 +1,15 @@
-package com.example.dogs
+package com.example.dogs.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class RandomDogResponse {
+class DogListResponse {
     @SerializedName("status")
-
     @Expose
 
     val status: String? = null
 
     @SerializedName("message")
-
     @Expose
-
-    val message: String? = null
-
-    var id: Int = 0
-
-    var name: String? = null
+    val message: List<String>? = null
 }

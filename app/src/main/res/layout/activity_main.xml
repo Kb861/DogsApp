@@ -8,7 +8,7 @@
         tools:context=".MainActivity">
 
     <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
-                                            android:layout_height="0dp"
+                                            android:layout_height="@dimen/height0dp"
                                             android:layout_marginBottom="8dp"
                                             app:layout_constraintBottom_toTopOf="@+id/imageView_randomDog"
                                             android:layout_marginTop="8dp"
@@ -17,18 +17,18 @@
                                             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
                                             android:id="@+id/recyclerView_dogs"
                                             android:layout_marginStart="8dp"></android.support.v7.widget.RecyclerView>
-    <ImageView android:layout_width="100dp" android:layout_height="100dp"
+    <ImageView android:layout_width="100dp" android:layout_height="@dimen/height100dp"
 
                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/button_showDog"
                android:id="@+id/imageView_randomDog"/>
-    <Button android:layout_width="match_parent" android:layout_height="100dp"
-            android:layout_marginBottom="8dp"
+    <Button android:layout_width="match_parent" android:layout_height="@dimen/height100dp"
+            android:layout_marginBottom="8dp" android:background="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:id="@+id/button_showDog" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
-            android:text="Pokaz pieska"
+            android:text="@string/random"
     />
 
 </android.support.constraint.ConstraintLayout>

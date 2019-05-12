@@ -7,6 +7,9 @@ import android.util.Log
 import android.view.View
 import butterknife.ButterKnife
 import com.bumptech.glide.Glide
+import com.example.dogs.adapter.DogsListAdapter
+import com.example.dogs.model.DogListResponse
+import com.example.dogs.model.RandomDogResponse
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
@@ -58,12 +61,10 @@ class MainActivity : AppCompatActivity() {
         val request = createRequest(url)
 
         client!!.newCall(request).enqueue(object : Callback {
-
             override fun onFailure(call: Call, e: IOException) {
                 Log.e(e.localizedMessage, e.message)
 
             }
-
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
@@ -99,7 +100,6 @@ class MainActivity : AppCompatActivity() {
                 var url: String? = "breed/$name/images/random"
                 getRandomDogPhoto(url!!)
 
-
             }
 
         }
@@ -119,8 +119,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun createRequest(url: String): Request {
 
         return Request.Builder()
@@ -133,15 +131,12 @@ class MainActivity : AppCompatActivity() {
     private fun getRandomDogPhoto(url: String) {
 
         val request = createRequest(url)
-
         client!!.newCall(request).enqueue(object : Callback {
 
             override fun onFailure(call: Call, e: IOException) {
                 Log.e(e.localizedMessage, e.message)
 
             }
-
-
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
@@ -151,11 +146,8 @@ class MainActivity : AppCompatActivity() {
                 if (responseModel.status == "success") {
 
                     runOnUiThread {
-
                         Glide.with(this@MainActivity)
-
                             .load(responseModel.message)
-
                             .into(imageView_randomDog)
 
                     }
